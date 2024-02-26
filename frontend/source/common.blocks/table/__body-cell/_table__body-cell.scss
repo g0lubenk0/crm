@@ -1,0 +1,27 @@
+.table__body-cell,
+.table > tbody > tr > td {
+    @extend %text-s;
+    padding: #{$gap_m * 0.75} $gap_s;
+    text-align: left;
+    border: 0;
+    border-bottom: $border_width_m solid transparent;
+    transition: border-bottom-color $animation_speed_m $animation_type;
+
+    > * {
+        vertical-align : middle;
+    }
+
+    > .icon {
+        color: $color_neutral_60;
+        margin-right: $gap_xs;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    > .textbox,
+    > .dropdown-select {
+        width: 100%;
+        min-width: 10rem;
+    }
+}

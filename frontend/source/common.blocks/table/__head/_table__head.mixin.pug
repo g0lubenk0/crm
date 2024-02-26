@@ -1,0 +1,6 @@
+mixin table__head
+    thead.table__head(class!=attributes.class)
+        if block
+            block
+        else
+            +table__head-row

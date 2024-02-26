@@ -1,0 +1,209 @@
+extends layouts/layout-inner
+append vars
+    - pageTitle = 'Deals'
+block content
+    +main-content
+        +main-content__head
+            +main-content__head-row
+                +main-content__title Сделки
+                +page-controls
+                    +button.button_size_s
+                        +icon('plus-circle')
+                        span Новая сделка
+        +main-content__body
+            +named-filter-group
+                +named-filter(title="Мои сделки" description="Контракты, в которых есть сделки с нарушенными сроками поставки. Обработайте их или перенесите сроки сделки" counterIcon="check").named-filter_active
+                +named-filter(title="Сроки нарушены!" description="Обработайте этих клиентов или отложите подписание контракта")
+                +named-filter(title="Срок сделки в течение недели" description="Контракты, у которых близится срок завершения сделки. Обработайте их или перенесите даты завершения сделки.").named-filter_color_warning
+                +named-filter(title="Архивные сделки" description="Контракты, в которых есть сделки с нарушенными сроками поставки. Обработайте их или перенесите сроки сделки")
+                +named-filter(title="Почти завершенные сделки" description="Обработайте этих клиентов или отложите подписание контракта").named-filter_color_error
+                +named-filter(title="Завершение сделки в течение недели" description="Контракты, у которых близится срок завершения сделки. Обработайте их или перенесите даты завершения сделки.").named-filter_color_error
+            +search
+            +table-view
+                +table
+                    +table__head
+                        +table__head-row
+                            +table__head-cell Контракт
+                            +table__head-cell Заказчик
+                            +table__head-cell Ответственный
+                            +table__head-cell Срок поставки
+                            +table__head-cell Сумма
+                            +table__head-cell Статус
+                            +table__head-cell.table__head-cell_actions
+                                +button.button_no-text.button_size_xs.button_transparent
+                                    +icon('cog')
+                                +button.button_no-text.button_size_xs.button_transparent
+                                    +icon('filter')
+
+                    +table__body
+                        +table__body-row.table__body-row_color_warning
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('fire').icon_size_s.table__cell-item
+                                span 25 сен
+                            +table__body-cell
+                                | 25 000 ₽
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('trash')
+                        +table__body-row.table__body-row_color_warning
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('fire').icon_size_s.table__cell-item
+                                span 25 сен
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('trash')
+                        +table__body-row
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('calendar').icon_size_s.table__cell-item
+                                span 5 мар 2023
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('trash')
+                        +table__body-row.table__body-row_color_error
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('calendar').icon_size_s.table__cell-item
+                                span 5 мар 2023
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text
+                                    +icon('trash')
+                        +table__body-row
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('calendar').icon_size_s.table__cell-item
+                                span 5 мар 2023
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('trash')
+                        +table__body-row
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('calendar').icon_size_s.table__cell-item
+                                span 5 мар 2023
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('trash')
+                        +table__body-row
+                            +table__body-cell
+                                a(href='#') 20220612-O-2
+                            +table__body-cell
+                                a(href="#") ИП Иванов Иван Иванович
+                            +table__body-cell
+                                a(href="#") Иванов И. И. (ip.ivanov@mail.ru)
+                            +table__body-cell
+                                +icon('calendar').icon_size_s.table__cell-item
+                                span 5 мар 2023
+                            +table__body-cell
+                                | $ 14 000
+                            +table__body-cell
+                                +dropdown-select.dropdown-select_size_s
+                            +table__body-cell.table__body-cell_actions
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('pencil')
+                                +button.button_size_xs.button_rounded.button_no-text.button_transparent
+                                    +icon('trash')
+
+                +pagination
+    +modal.modal_aside
+        +modal__main
+            +modal__close
+                +icon('x')
+            +modal__body
+                +modal__title Новая сделка
+                +entity-fields
+                    +entity-fields__group
+                        +entity-fields__row
+                            +entity-fields__col
+                                +datepicker(label="Дата формирования" fixable=false placeholder="Выберите дату" value='25 мар 2022')
+                            +entity-fields__col
+                                +datepicker(label="Планируемая дата завершения" fixable=false placeholder="Выберите дату" value='')
+                        +dropdown-select(label="Заказчик" placeholder='Выберите заказчика' fixable=false value='ООО "Иванов и партнеры"')
+                        +dropdown-select(label="Исполнитель" placeholder='Выберите испонителя' fixable=false value='ООО "Кит консалтинг"')
+                        +dropdown-select(label="Контракт" placeholder='Выберите контракт' fixable=false value='')
+                        +dropdown-select(label="Ответственное лицо" placeholder='Выберите пользователя' fixable=false value='')
+                        +entity-fields__row
+                            +entity-fields__col
+                                +textbox(label="Сумма сделки" fixable=false placeholder="Сумма сделки")
+                            +entity-fields__col.entity-fields__col_size_xs
+                                +dropdown-select(placeholder='' fixable=false value='₽ (RUB)')
+                        +entity-fields__expandable-wrapper.entity-fields__expandable-wrapper_expanded
+                            +entity-fields__expander
+                            +entity-fields__expandable-group
+                                +entity-fields__group
+                                    +textbox(label="Кастомное поле" fixable=false value="Кастомное значение")
+                                    +textbox(textarea=true fixable=false label="Кастомное поле" value="Кастомное значение гораздо длиннее по своему значению. Возможно даже на несколько строк")
+                                    +textbox(textarea=true fixable=false label="Кастомное поле" value="Кастомное значение гораздо длиннее по своему значению. Возможно даже на несколько строк")
+                                    +textbox(textarea=true fixable=false label="Кастомное поле" value="Кастомное значение гораздо длиннее по своему значению. Возможно даже на несколько строк")
+
+            +modal__footer
+                +button.button_transparent Сохранить и закрыть
+                +button Сохранить
+block notifications
+    +page-notifications

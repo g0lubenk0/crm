@@ -1,0 +1,10 @@
+.button.button_size_xs {
+    padding: $gap_xs $gap_s;
+    font-size: $fontsize_text_s;
+    border-radius: $radius_s;
+
+    .icon {
+        font-size: $icon_size_xs;
+        margin-right: calc(#{$gap_xs} / 2);
+    }
+}
