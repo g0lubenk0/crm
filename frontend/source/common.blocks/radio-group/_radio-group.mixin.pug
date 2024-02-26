@@ -1,0 +1,15 @@
+mixin radio-group
+    .radio-group(class!=attributes.class)
+        if attributes.title || attributes.description
+            +radio-group__wrapper
+                if attributes.title
+                    +radio-group__title= attributes.title
+                if attributes.description
+                    +radio-group__description= attributes.description
+        +radio-group__wrapper
+            +radio-group__controls
+                each item in attributes.items
+                    +radio-group__control
+                        +radio(name=attributes.name value=item.value label=item.label checked=item.checked)
+            if attributes.message
+                +radio-group__message= attributes.message

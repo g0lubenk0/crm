@@ -1,0 +1,24 @@
+.utility-container__body {
+    @extend %flex-row-vstart-hstart-wrap;
+    padding: $gap_l;
+    background-color: $color_neutral_0;
+
+    > * {
+        margin: 0 $gap_m $gap_m 0;
+    }
+
+    > .textbox,
+    > .dropdown-select,
+    > .datepicker {
+        min-width: 40rem;
+    }
+
+    > .radio-group {
+        min-width: 60rem;
+    }
+
+    .tabs,
+    .search {
+        width: 100%;
+    }
+}
